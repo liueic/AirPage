@@ -3,7 +3,7 @@ FROM golang:1.24-alpine AS builder
 WORKDIR /app
 
 # 将 go.mod 和 go.sum 复制到工作目录，并下载依赖
-COPY go.mod go.sum ./
+COPY go.mod ./
 RUN go mod download
 
 # 将项目源码复制到容器中
