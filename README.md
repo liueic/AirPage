@@ -6,7 +6,9 @@
 
 ## 自行部署
 
-你需要获取来自 AQICN 的 API：https://aqicn.org/api/，并且将其设置到环境变量中
+你需要获取来自 AQICN 的 API：https://aqicn.org/api/
+
+并且将其设置到环境变量中
 
 ### 1.本地编译
 
