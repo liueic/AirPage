@@ -2,7 +2,7 @@
 FROM golang:1.24-alpine AS builder
 WORKDIR /app
 
-# 将 go.mod 和 go.sum 复制到工作目录，并下载依赖
+# 将 go.mod 复制到工作目录，并下载依赖
 COPY go.mod ./
 RUN go mod download
 
@@ -10,7 +10,7 @@ RUN go mod download
 COPY . .
 
 # 编译应用程序，生成静态二进制文件
-RUN CGO_ENABLED=0 GOOS=linux go build -o airpage main.go
+RUN go build -o airpage .
 
 # 运行阶段
 FROM alpine:latest
@@ -25,4 +25,4 @@ COPY --from=builder /app/templates ./templates
 EXPOSE 8080
 
 # 启动应用
-CMD ["./airpage"]g
+CMD ["./airpage"]
