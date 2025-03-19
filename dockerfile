@@ -1,5 +1,5 @@
 # 构建阶段
-FROM golang:1.20-alpine AS builder
+FROM golang:1.24-alpine AS builder
 WORKDIR /app
 
 # 将 go.mod 和 go.sum 复制到工作目录，并下载依赖
@@ -25,4 +25,4 @@ COPY --from=builder /app/templates ./templates
 EXPOSE 8080
 
 # 启动应用
-CMD ["./airpage"]
+CMD ["./airpage"]g
