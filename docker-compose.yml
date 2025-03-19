@@ -1,0 +1,8 @@
+services:
+  web:
+    image: aicnal/airpage:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - API=
+    restart: unless-stopped
